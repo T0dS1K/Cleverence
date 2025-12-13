@@ -4,7 +4,7 @@ namespace Cleverence.Task_1
 {
     public class CompressionUtility
     {
-        public void CompressString(string input)
+        public void Compression(string input)
         {
             if (StringValidator.IsValidNativeOriginal(input))
             {
@@ -16,7 +16,7 @@ namespace Cleverence.Task_1
             }
         }
 
-        public void DecompressString(string input)
+        public void DecompressionString(string input)
         {
             if (StringValidator.IsValidNativeCompressed(input))
             {
@@ -28,7 +28,7 @@ namespace Cleverence.Task_1
             }
         }
 
-        private string CompressionAlgorithm(ReadOnlySpan<char> input)
+        public string CompressionAlgorithm(ReadOnlySpan<char> input)
         {
             StringBuilder sb = new();
             sb.Append(input[0]);
@@ -52,7 +52,7 @@ namespace Cleverence.Task_1
             return sb.ToString();
         }
 
-        private string DecompressionAlgorithm(ReadOnlySpan<char> input)
+        public string DecompressionAlgorithm(ReadOnlySpan<char> input)
         {
             StringBuilder sb = new();
             StringBuilder count = new();
@@ -64,7 +64,7 @@ namespace Cleverence.Task_1
                     ApplyCount();
                     sb.Append(c);
                 }
-                else if (c >= '0' && c <= '9')
+                else if (c >= '2' && c <= '9')
                 {
                     count.Append(c);
                 }

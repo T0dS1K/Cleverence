@@ -5,7 +5,7 @@ namespace Cleverence.Task_1
     public static class StringValidator
     {
         private static Regex OriginalString { get; } = new Regex("^[a-z]+$", RegexOptions.Compiled);
-        private static Regex CompressedString { get; } = new Regex("^([a-z][0-9]+)+$", RegexOptions.Compiled);
+        private static Regex CompressedString { get; } = new Regex("^([a-z][2-9]+)+$", RegexOptions.Compiled);
 
         public static bool IsValidRegexOriginal(string input)
         {
@@ -49,7 +49,7 @@ namespace Cleverence.Task_1
                     flag_f = true;
                     flag_s = (i == input.Length - 1) ? true : false;
                 }
-                else if (c >= '0' && c <= '9')
+                else if (c >= '2' && c <= '9')
                 {
                     flag_s = true;
                 }
